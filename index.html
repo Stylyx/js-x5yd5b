@@ -1,0 +1,289 @@
+<title>Pax2Pay Online</title>
+<link rel="icon" type="image/png" href="assets/img/favicon-16x16.png" sizes="16x16" data-remove="false">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://kit.fontawesome.com/89592f1727.js" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+
+<div class="container-fluid">
+	<!-- <div class="row">
+		<div class="col-2">
+
+
+
+		</div>
+
+
+
+		<div class="col-6">
+			<h1>Flight Booking Payment Request</h1>
+	
+
+	
+		</div>
+	</div> -->
+	<!-- 
+	<div class="row">
+		<div class="well well-sm">
+			<div class="media" style="overflow:visible;">
+				<div class="media-body" style="overflow:visible;">
+					<h4 class="media-heading">
+						<span class="label label-info fa fa-shopping-cart" aria-hidden="true">&nbsp;Booking Details</span>
+					</h4>
+				</div>
+				<div class="row">
+					<div class="col-xs-8">
+						<div class="well well-sm">
+							<div class="media" style="overflow:visible;">
+								<div class="media-body" style="overflow:visible;">
+									<h4 class="media-heading">C Fungus <small>S7QV6K || </small></h4>
+									<p>
+										<span class="label label-info fa fa-plane" aria-hidden="true">&nbsp;Flight</span>
+
+
+
+										<span class="label label-success">Booked</span>
+									</p>
+									<h6>Departing: <i>04/APR/2019 1455</i> || Party: <i>1</i> Adult || <i>0</i>
+										Children || <i>0</i> Infants</h6>
+									<h6>Booking Date: <i>29/MAR/19 16:43</i> || Supplier: <i>Ryanair (RYR)</i>
+										|| Booking Price: <i>11.99 (EUR)</i></h6>
+									<h6>Cardholder Name: <i>Cholo Fungus</i> || Last 4 Digits: <i>6522</i></h6>
+									<h6>Syndicator: <i>MultiCommerceV3TEST</i> || SID:
+										<i>J1UZB0ZGRS3K5jBlwGi1ZOaC</i> || BID: <i>K9LrqnMLYPxuTkmLKB3p1A4e</i>
+									</h6>
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> -->
+	<div class="container">
+		<div class="py-5 text-center">
+
+			<div id="div1" class="logo">
+				<img alt="Easyjet orange.png" src="//upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Easyjet_orange.png/250px-Easyjet_orange.png" decoding="async" width="250" height="99" srcset="//upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Easyjet_orange.png/375px-Easyjet_orange.png 1.5x, //upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Easyjet_orange.png/500px-Easyjet_orange.png 2x" data-file-width="1494" data-file-height="592"></img>
+			</div>
+
+			<div id="div2" class="logo">
+				<img alt="Ryanair.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/d/d5/Ryanair.svg/250px-Ryanair.svg.png" decoding="async" width="250" height="29" srcset="//upload.wikimedia.org/wikipedia/en/thumb/d/d5/Ryanair.svg/375px-Ryanair.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/d/d5/Ryanair.svg/500px-Ryanair.svg.png 2x" data-file-width="300" data-file-height="35">
+</div>
+
+				<div id="div3" class="logo">
+					<img alt="Norwegian Logo.svg" src="//upload.wikimedia.org/wikipedia/en/thumb/c/cc/Norwegian_Logo.svg/250px-Norwegian_Logo.svg.png" decoding="async" width="250" height="78" srcset="//upload.wikimedia.org/wikipedia/en/thumb/c/cc/Norwegian_Logo.svg/375px-Norwegian_Logo.svg.png 1.5x, //upload.wikimedia.org/wikipedia/en/thumb/c/cc/Norwegian_Logo.svg/500px-Norwegian_Logo.svg.png 2x" data-file-width="145" data-file-height="45">
+</div>
+					<h2>Checkout form</h2>
+					<p id="paymentinprogress" class="lead">Confirm the booking details and the payment option</p>
+          <p id="paymentcomplete" class="lead">Payment Complete - Confirmation Code <span class="lead b" id="auth"></span></p>
+				</div>
+        
+				<div class="row">
+					<div id="loader">
+
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 order-md-2 mb-4">
+						<h4 class="d-flex justify-content-between align-items-center mb-3">
+							<span class="text-muted">Your cart</span>
+							<span class="badge badge-secondary badge-pill">3</span>
+						</h4>
+						<ul class="list-group mb-3">
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div>
+									<h6 class="my-0">Adult Outbound Flight</h6>
+									<small class="text-muted">STN-PMI 22/8/21</small>
+								</div>
+								<span class="text-muted"><span id="amount1"></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div>
+									<h6 class="my-0">Priority Boarding</h6>
+									<small class="text-muted">Speedy Boarding</small>
+								</div>
+								<span class="text-muted"><span id="amount2"></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between lh-condensed">
+								<div>
+									<h6 class="my-0">2x Hand Baggage items for 1 passenger(s)</h6>
+									<small class="text-muted">2x Hand Baggage</small>
+								</div>
+								<span class="text-muted"><span id="amount3"></span></span>
+							</li>
+							<li class="list-group-item d-flex justify-content-between">
+								<span>Total</span>
+								<strong><span id="currency"></span> <span id="amount"></span> </strong>
+							</li>
+						</ul>
+
+
+					</div>
+					<div class="col-md-8 order-md-1">
+						<h4 class="mb-3">Billing address</h4>
+						<form class="needs-validation" novalidate>
+							<div class="row">
+								<div class="col-md-6 mb-3">
+									<label for="firstName">First name</label>
+									<input type="text" class="form-control" id="firstName" placeholder="" value="Pax" required>
+									<div class="invalid-feedback">
+										Valid first name is required.
+									</div>
+								</div>
+								<div class="col-md-6 mb-3">
+									<label for="lastName">Last name</label>
+									<input type="text" class="form-control" id="lastName" placeholder="" value="2Pay" required>
+									<div class="invalid-feedback">
+										Valid last name is required.
+									</div>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="username">Username</label>
+								<div class="input-group">
+									<div class="input-group-prepend">
+										<span class="input-group-text">@</span>
+									</div>
+									<input type="text" class="form-control" id="username" placeholder="Username" value="Pax2Pay" required>
+									<div class="invalid-feedback" style="width: 100%;">
+										Your username is required.
+									</div>
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="email">Email <span class="text-muted">(Optional)</span></label>
+								<input type="email" class="form-control" id="email" placeholder="you@example.com" value="pax2pay@paxport.net">
+								<div class="invalid-feedback">
+									Please enter a valid email address for shipping updates.
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="address">Address</label>
+								<input type="text" class="form-control" id="address" placeholder="1234 Main St" value=" 101 Victoria St" required>
+								<div class="invalid-feedback">
+									Please enter your shipping address.
+								</div>
+							</div>
+
+							<div class="mb-3">
+								<label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+								<input type="text" class="form-control" id="address2" placeholder="Apartment or suite" value="Bristol">
+            </div>
+
+								<div class="row">
+									<div class="col-md-5 mb-3">
+										<label for="country">Country</label>
+										<select class="custom-select d-block w-100" id="country" required value="United Kingdom">
+                  <option value="" >Choose...</option>
+                  <option selected>United Kingdom</option>
+                </select>
+										<div class="invalid-feedback">
+											Please select a valid country.
+										</div>
+									</div>
+									<div class="col-md-3 mb-3">
+										<label for="postcode">Post Code</label>
+										<input type="text" class="form-control" id="postcode" placeholder="" required value="BS1 6PU">
+										<div class="invalid-feedback">
+											Post code required.
+										</div>
+									</div>
+								</div>
+								<hr class="mb-4">
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="same-address" checked>
+									<label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+								</div>
+								<div class="custom-control custom-checkbox">
+									<input type="checkbox" class="custom-control-input" id="save-info">
+									<label class="custom-control-label" for="save-info">Save this information for next time</label>
+								</div>
+								<hr class="mb-4">
+
+								<h4 class="mb-3">Payment</h4>
+
+								<div class="d-block my-3">
+									<div class="custom-control custom-radio">
+										<input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required>
+										<label class="custom-control-label" for="credit">Pax2Pay</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input id="credit" name="paymentMethod" type="radio" class="custom-control-input" required>
+										<label class="custom-control-label" for="credit">Credit card</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required>
+										<label class="custom-control-label" for="debit">Debit card</label>
+									</div>
+									<div class="custom-control custom-radio">
+										<input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required>
+										<label class="custom-control-label" for="paypal">Paypal</label>
+									</div>
+								</div>
+
+								<div class="row">
+									<div class="input-group">
+										<input id="token" type="text" class="form-control" placeholder="Pax2Pay Payment Code">
+										<div class="input-group-append">
+											<button type="submit" class="btn btn-secondary">Pax2Pay Token</button>
+										</div>
+									</div>
+								</div>
+								<!-- <div class="row">
+              <div class="col-md-6 mb-3">
+                <label for="cc-name">Name on card</label>
+                <input type="text" class="form-control" id="cc-name" placeholder="" required>
+                <small class="text-muted">Full name as displayed on card</small>
+                <div class="invalid-feedback">
+                  Name on card is required
+                </div>
+              </div>
+              <div class="col-md-6 mb-3">
+                <label for="cc-number">Credit card number</label>
+                <input type="text" class="form-control" id="cc-number" placeholder="" required>
+                <div class="invalid-feedback">
+                  Credit card number is required
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">Expiration</label>
+                <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
+                <div class="invalid-feedback">
+                  Expiration date required
+                </div>
+              </div>
+              <div class="col-md-3 mb-3">
+                <label for="cc-expiration">CVV</label>
+                <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
+                <div class="invalid-feedback">
+                  Security code required
+                </div>
+              </div>
+            </div>
+            <hr class="mb-4"> -->
+								<div class="row">
+									<hr>
+								</div>
+								<button  class="btn btn-danger btn-lg btn-block" type="submit"><span id="bip">Booking in progress<span></button>
+						</form>
+					</div>
+				</div>
+
+				<footer class="my-5 pt-5 text-muted text-center text-small">
+					<p class="mb-1">&copy; 2019 Pax2Pay</p>
+					<ul class="list-inline">
+						<li class="list-inline-item"><a href="#">Privacy</a></li>
+						<li class="list-inline-item"><a href="#">Terms</a></li>
+						<li class="list-inline-item"><a href="#">Support</a></li>
+					</ul>
+				</footer>
+			</div>
+
+		</div>
